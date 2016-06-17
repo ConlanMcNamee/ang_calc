@@ -40,6 +40,7 @@ describe('it should test something', function() {
     it('should respond with the proper answer', function() {
       $httpBackend.expectGET('http://localhost:3000/calculate?operands=%7B%22a%22:15,%22b%22:2%7D&operation=subtract')
       .respond(200, {answer: 13})
+      console.log(calcController.a);
       calcController.run();
       $httpBackend.flush();
       expect(calcController.answer).toBe(13);
