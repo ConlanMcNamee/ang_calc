@@ -18,10 +18,21 @@
   },
   "homepage": "https://github.com/ConlanMcNamee/ang_calc#readme",
   "devDependencies": {
+    "angular-mocks": "^1.5.7",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
-    "webpack": "^1.13.1"
+    "mocha": "^2.5.3",
+    "webpack": "^1.13.1",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "express": "^4.14.0"
   }
 }
