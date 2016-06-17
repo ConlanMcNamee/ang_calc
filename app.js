@@ -5,25 +5,27 @@ var app = angular.module('calc', [])
 //   $httpProvider.defaults.withCredentials = true;
 // }]);
 
-app.controller('CalcController', ['$http', '$scope', function($http, $scope) {
-  $scope.a = 15;
-  $scope.b = 2;
-  $scope.operation = 'subtract'; // Default for <select> element.
-  $scope.run = function() {
+app.controller('CalcController', ['$http', function($http) {
+  //changed to this. instead of $scope when testing will try both though
+  this.a = 15;
+  this.b = 2;
+  this.operation = 'subtract'; // Default for <select> element.
+
+  this.run = function() {
     $http({
       url: 'http://localhost:3000/calculate',
       method: "GET",
       params: {
         operands: {
-          a: $scope.a,
-          b: $scope.b
+          a: this.a,
+          b: this.b
         },
-        operation: $scope.operation
+        operation: this.operation
       }
     })
     .then(function(response) {
       console.log(response);
-      $scope.answer = response.data.answer;
+      this.answer = response.data.answer;
     })
   };
 

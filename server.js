@@ -23,12 +23,12 @@ app.get('/calculate', function(req, res) {
       return a / b;
     }
   };
-
+  
   var operands = JSON.parse(req.query.operands);
   var operation = operations[req.query.operation];
-  var answer = operation(operands.a, operands.b);
-  res.setHeader('Content-Type', 'application/javascript');
-  res.send({answer: answer });
+  var result = operation(Number(operands.a), Number(operands.b));
+
+  res.send({answer: result });
 })
 
 
